@@ -1,0 +1,16 @@
+/* 全局适配样式（第四十批） */
+
+/* A1/A2：移动端全部弹窗宽度不超屏（固定宽弹窗 max-width 94vw 兜底） */
+@media (max-width: 768px) {
+  /* 弹窗在侧边栏（64px 窄条）右侧区域内居中，避免左缘被遮挡 */
+  .el-overlay {
+    padding-left: 64px;
+  }
+  .el-dialog {
+    max-width: calc(100vw - 80px) !important;
+  }
+  /* C1 方案一：宽表格次要列移动端隐藏（列上标 col-sm-hide） */
+  .col-sm-hide {
+    display: none !important;
+  }
+}

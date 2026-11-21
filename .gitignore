@@ -1,0 +1,28 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+
+# ---- Node / 前端构建产物 ----
+node_modules/
+frontend/dist/
+
+# ---- 运行时数据与生产配置（含密钥与业务数据，勿入库）----
+config.yaml
+backend/data/
+data/
+
+# ---- 安全扫描工具缓存 ----
+.mimosa/
+
+# ---- IDE / 操作系统 ----
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# ---- 本机工具缓存 ----
+.v2c/

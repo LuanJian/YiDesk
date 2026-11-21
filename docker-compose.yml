@@ -1,0 +1,23 @@
+# IT 运维工单台 Docker Compose（v2.7 工程运维项）
+# 用法：
+#   1) 先构建前端：cd frontend && npm install && npm run build
+#   2) 准备配置：cp config.example.yaml config.yaml && vi config.yaml
+#   3) docker compose up -d
+# 数据（SQLite + 附件 + 备份）持久化在 ./data 卷中
+services:
+  helpdesk:
+    build: .
+    container_name: itops-helpdesk
+    ports:
+      - "8300:8300"
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./config.yaml:/opt/itops-helpdesk/config.yaml:ro
+      - ./data:/opt/itops-helpdesk/backend/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request;urllib.request.urlopen('http://127.0.0.1:8300/')"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
