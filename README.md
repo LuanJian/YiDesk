@@ -35,6 +35,14 @@
 
 ---
 
+## 界面预览
+
+| 工单列表 | 数据看板 |
+|---|---|
+| ![工单列表](docs/screenshots/tickets.png) | ![数据看板](docs/screenshots/analytics.png) |
+| **工单详情** | **会议管理** |
+| ![工单详情](docs/screenshots/ticket-detail.png) | ![会议管理](docs/screenshots/meetings.png) |
+
 ## 功能总览
 
 | 模块 | 功能点 |
